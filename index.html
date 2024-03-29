@@ -23,9 +23,9 @@
             box-sizing: border-box;
             overflow-y: auto;
         }
-        #control-panel {
-            flex: 20%;
-        }
+
+
+
         #image-display {
             flex: 60%;
         }
@@ -50,7 +50,7 @@
         }
 
         .switch-container h2 {
-            margin-left: 10px; /* Adjust spacing between switch and text */
+            margin-left: 50px; /* Adjust spacing between switch and text */
         }
 
 
@@ -109,14 +109,37 @@
         border-radius: 50%;
         }
 
+
+        #control-panel {
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-container {
+            margin-top: 10px; /* Adjust margin as needed */
+        }
+
+        /* Adjust the width of the dropdown */
+        .dropdown-container select {
+            width: 100%; /* Set the width to 100% */
+            height: 30px;
+            text-align: center;
+        }
+
+        .dropdown-container select option {
+            text-align: center; /* Center text horizontally within the options */
+        }
+
+
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>MRI Machine Interface</h1>
-    </header>
     <main class="container">
+        
         <div class="column" id="control-panel">
+            <!-- Control Panel Section -->
             <div class="switch-container">
                 <label class="switch">
                     <input type="checkbox">
@@ -125,9 +148,19 @@
                 <h2>Visualization</h2>
             </div>
             
-            
-            <p>This section contains controls for configuring the MRI scan.</p>
+            <!-- Add the dropdown here -->
+            <div class="dropdown-container">
+                
+                <select>
+                    <option value="option1">Image Control</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
         </div>
+        
+
         <div class="column" id="image-display">
             <!-- Image Display Section -->
             <h2>Image Display</h2>
