@@ -1,0 +1,226 @@
+/* CSS for layout */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.column {
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+
+
+#image-display {
+    flex: 60%;
+}
+
+#additional-tools {
+    flex: 15%;
+}
+
+.column:not(:last-child) {
+    margin-right: 2px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.switch-container h2 {
+    margin-left: 50px; /* Adjust spacing between switch and text */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+#control-panel {
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-container {
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+/* Adjust the width of the dropdown */
+.dropdown-container select {
+    width: 100%; /* Set the width to 100% */
+    height: 30px;
+    text-align: center;
+}
+
+.dropdown-container select option {
+    text-align: center; /* Center text horizontally within the options */
+}
+
+#additional-tools {
+    flex: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-grid {
+    display: flex;
+    justify-content: space-between; /* Space evenly between icons */
+    margin-top: 10px; /* Adjust margin as needed */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.icon-box {
+    width: calc(25% - 1px); /* Calculate width for 4 squares with margin in between */
+    padding-top: calc(25% -0px); /* Set height same as width to make it square */
+    position: relative;
+    background-color: #f0f0f0; /* Background color for the box */
+    border: 1px solid #ccc; /* Border for the box */
+    box-sizing: border-box;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.icon {
+    max-width: 80%; /* Limit the maximum width of the SVG icon */
+    max-height: 80%; /* Limit the maximum height of the SVG icon */
+}
+
+.icon-text {
+    position: absolute;
+    bottom: -25px; /* Adjust the distance of the text from the icon box */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.rectangular-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px; /* Adjust width as needed */
+    margin-top: 20px;
+    margin-bottom: 1px;
+}
+
+.box-text {
+    margin: 0 10px;
+    flex: 1;
+    /* Additional styling for the text */
+}
+
+/* Additional styling for SVG icons */
+.feather {
+    width: 24px;
+    height: 24px;
+}
+
+.rectangular-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* CSS for Image Display Section */
+#image-display {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#image-display h2 {
+    margin-bottom: 5px;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Gap between rows */
+}
+
+.row {
+    display: flex;
+    gap: 5px; /* Gap between images */
+}
+
+.image-container {
+    flex: 1; /* Each image container takes equal space */
+}
+
+.current-image {
+    width: 100%; /* Make the images fill their containers */
+    height: auto;
+    border-radius: 8px;
+}
